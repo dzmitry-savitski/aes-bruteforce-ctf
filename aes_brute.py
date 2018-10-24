@@ -7,6 +7,7 @@ from base64 import b64encode, b64decode
 ciphertext = b64decode("ytW81KkHaGOnaqiG7Gr4AA==")
 wordlist = "../../rockyou.txt"
 known_plaintext = ""
+print_all_ascii = True
 charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 # charset = "0123456789abcdef"
 # charset = ''.join(chr(x) for x in range(256))
@@ -65,7 +66,7 @@ def brute_key_length(pwd):
 def try_pass(key):
     try:
         result = decrypt(key)
-        if is_ascii(result) or (known_plaintext and known_plaintext in result):
+        if (print_all_ascii and is_ascii(result)) or (known_plaintext and known_plaintext in result):
             print "[b64 key: {}]: {}".format(b64encode(key), result)
             # beep()
     except KeyboardInterrupt:
