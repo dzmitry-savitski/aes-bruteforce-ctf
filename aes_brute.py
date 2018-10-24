@@ -4,7 +4,7 @@ import os
 from Crypto.Cipher import AES
 from base64 import b64encode, b64decode
 
-ciphertext = b64decode("ytW81KkHaGOnaqiG7Gr4AA==")
+ciphertext = b64decode("yzW81KkRaGOnaqiG7pr4AA==")
 wordlist = "../../rockyou.txt"
 known_plaintext = ""
 print_all_ascii = True
